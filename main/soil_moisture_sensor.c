@@ -114,8 +114,8 @@ void init(){
     ESP_ERROR_CHECK(esp_wifi_init(&cfg));
     wifi_config_t wifi_config = {
         .sta = {
-            .ssid = "Redmi 12 5G",
-            .password = "bit9vs5hkf7ze36",
+            .ssid = "SSID NAME HERE",
+            .password = "ENTER YOUR PASSWORD HERE",
         },
     };
     ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA));
@@ -228,7 +228,7 @@ void thingspeak_Task(void *param){
          char url_buffer[256];
          snprintf(url_buffer, sizeof(url_buffer), 
          "http://api.thingspeak.com/update?api_key=%s&field1=%.2f&field2=%.2f", 
-         "EFXKAEFE25CEYNGZ", average_voltage, percentage_moisture); 
+         "EnterYourWriteAPIKeyHere", average_voltage, percentage_moisture); 
          esp_http_client_config_t config = {
              .url = url_buffer,
              .method = HTTP_METHOD_GET,
